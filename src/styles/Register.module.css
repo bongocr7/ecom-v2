@@ -1,0 +1,21 @@
+.registerbody{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images.pexels.com/photos/96627/pexels-photo-96627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: 100% 100%;
+
+}
+
+.container{
+    background-color: white;
+    border-radius: 25px;
+    padding: 3rem 5rem;
+    position: absolute;
+    right: 10%;
+    text-align: center;
+}
+
+.link{
+    border-radius: 25px;
+    text-decoration: none;
+}

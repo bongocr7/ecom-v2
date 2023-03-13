@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { Dashboard } from "./Components/Dashboard";
+import { Register } from "./Components/Register";
+import { Login } from "./Components/Login";
+import { AuthProvider } from "./utils/Auth";
+import { RequireAuth } from "./utils/RequireAuth";
+import { Mobile } from "./Components/Mobile";
+import { Buypage } from "./Components/Buypage";
+import { PagenotFound } from "./Components/PagenotFound";
+import { CartProvider } from "./utils/Cartcontext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <AuthProvider>
+      <Routes>
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route path="Mobile" element={<Mobile />} />
+        </Route>
+        <Route
+          path="Buy"
+          element={
+            <CartProvider>
+              <Buypage />
+            </CartProvider>
+          }
+        />
+        <Route path="*" element={<PagenotFound />} />
+      </Routes>
+    </AuthProvider>
   );
 }
 

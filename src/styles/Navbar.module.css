@@ -1,0 +1,26 @@
+.Navcontainer{
+    padding: 1.5rem;
+    border-bottom: 2px solid rgb(0,0,255);
+}
+
+.leftNavcontainer a{
+    text-decoration: none;
+    color: black;
+    margin: 0.6rem;
+}
+
+.searchinput{
+    height: 100%;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    border: rgb(0, 0, 255);
+    background-color: rgb(226, 224, 224);
+    font-size: large;
+    text-align: center;
+}
+
+.searchbtn{
+    background-color: rgb(226, 224, 224);
+    border-radius: 0 25px 25px 0;
+    padding: 10px;
+}
